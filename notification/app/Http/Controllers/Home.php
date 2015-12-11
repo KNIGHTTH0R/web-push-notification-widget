@@ -44,9 +44,8 @@ class Home extends Controller
         if ($subscriber = Subscriber::where('did', $request->input('did'))->first()) {
           $subscriber->save();
         } else {
-          Subscriber::create($request->all());
+          $subscriber = Subscriber::create($request->all());
         }
-        $subscriber = Subscriber::all();
         return response()->json($subscriber);
     }
 
