@@ -40,7 +40,12 @@ class Home extends Controller
      */
     public function store(Request $request)
     {
-        Subscriber::create($request->all());
+        // dd($request->input('did'));
+        if ($subscriber = Subscriber::where('did', $request->input('did'))->first()) {
+          $subscriber->save();
+        } else {
+          Subscriber::create($request->all());
+        }
         $subscriber = Subscriber::all();
         return response()->json($subscriber);
     }
