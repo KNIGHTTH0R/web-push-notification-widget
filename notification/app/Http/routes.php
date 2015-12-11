@@ -15,6 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('subscribe', function () {
-    return response()->json(['name' => 'Abigail', 'state' => 'CA']);
-});
+Route::resource('subscribe', 'Home');
