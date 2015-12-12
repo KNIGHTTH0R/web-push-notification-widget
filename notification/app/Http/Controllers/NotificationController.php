@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\User;
 use App\Notification;
 use Illuminate\Http\Request;
@@ -11,6 +12,11 @@ use App\Http\Controllers\Controller;
 
 class NotificationController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +24,7 @@ class NotificationController extends Controller
      */
     public function index()
     {
-        $notifications = Notification::all();
+        $notifications = Notification::where('user_id', Auth::user()->id)->get();
         return response()->json($notifications);
     }
 
