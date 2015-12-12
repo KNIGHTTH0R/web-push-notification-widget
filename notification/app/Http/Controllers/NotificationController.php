@@ -18,7 +18,7 @@ class NotificationController extends Controller
      */
     public function index()
     {
-        $notifications = User::find()->notifications;
+        $notifications = Notification::all();
         return response()->json($notifications);
     }
 
