@@ -39,11 +39,15 @@ function sendSubscriptionToServer(subscription) {
   var mergedEndpoint = endpointWorkaround(subscription);
   var endpointSections = mergedEndpoint.split('/');
 
+  var data = new FormData();
+  data.append("did", endpointSections[endpointSections.length - 1]);
+  data.append("user_id", "566c79a717fa0bd070fe5e9a");
+
   var request = new Request('https://bebetter.in/subscriber', {
     method: 'POST', 
     mode: 'cors', 
     redirect: 'follow',
-    body: JSON.stringify({ "did": endpointSections[endpointSections.length - 1], "user_id": "566c79a717fa0bd070fe5e9a"}),
+    body: data,
     headers: {
       'Content-Type': 'application/json'
     }
