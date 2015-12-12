@@ -43,7 +43,7 @@ function sendSubscriptionToServer(subscription) {
     method: 'POST', 
     mode: 'cors', 
     redirect: 'follow',
-    body: { "did": endpointSections[endpointSections.length - 1], "user_id": "566c79a717fa0bd070fe5e9a"}
+    body: { "did": endpointSections[endpointSections.length - 1], "user_id": "566c79a717fa0bd070fe5e9a"},
     headers: new Headers({
       'Content-Type': 'application/json'
     })
