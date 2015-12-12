@@ -39,7 +39,7 @@ function sendSubscriptionToServer(subscription) {
   var mergedEndpoint = endpointWorkaround(subscription);
   var endpointSections = mergedEndpoint.split('/');
 
-  var request = new Request('https://bebetter.in/subscribe', {
+  var request = new Request('https://bebetter.in/subscriber', {
     method: 'POST', 
     mode: 'cors', 
     redirect: 'follow',
