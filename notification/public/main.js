@@ -43,7 +43,7 @@ function sendSubscriptionToServer(subscription) {
     method: 'POST', 
     mode: 'cors', 
     redirect: 'follow',
-    body: { "did": endpointSections[endpointSections.length - 1], "user_id": "566c79a717fa0bd070fe5e9a"}
+    body: JSON.stringify({ "did": endpointSections[endpointSections.length - 1], "user_id": "566c79a717fa0bd070fe5e9a"})
   });
   fetch(request).then(function(response) {
     console.log(response);
