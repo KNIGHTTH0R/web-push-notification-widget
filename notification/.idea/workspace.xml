@@ -58,8 +58,8 @@
       <file leaf-file-name="NotificationController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NotificationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5851064" vertical-offset="822" max-vertical-offset="1926">
-              <caret line="64" column="47" selection-start-line="64" selection-start-column="47" selection-end-line="64" selection-end-column="47" />
+            <state vertical-scroll-proportion="0.9361702" vertical-offset="354" max-vertical-offset="1926">
+              <caret line="49" column="23" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
               <folding>
                 <element signature="e#40#53#0#PHP" expanded="true" />
               </folding>
@@ -524,8 +524,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/NotificationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5851064" vertical-offset="822" max-vertical-offset="1926">
-          <caret line="64" column="47" selection-start-line="64" selection-start-column="47" selection-end-line="64" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.9361702" vertical-offset="354" max-vertical-offset="1926">
+          <caret line="49" column="23" selection-start-line="49" selection-start-column="23" selection-end-line="49" selection-end-column="23" />
           <folding>
             <element signature="e#40#53#0#PHP" expanded="true" />
           </folding>
