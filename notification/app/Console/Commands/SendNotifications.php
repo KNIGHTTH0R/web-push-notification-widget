@@ -45,17 +45,16 @@ class SendNotifications extends Command
     {
         $notification = $this->notification->find($this->argument('notification'));
         $user = $notification->user;
-        
-        $this->info($user->subscribers);
 
-        // $this->prepareDids($user->subscribers);
+        $subscribers = $this->prepareDids($user->subscribers); 
+        $this->info($subscribers);
 
         // Set various headers on a request
         $client = new Client([
             // Base URI is used with relative requests
             'base_uri' => 'https://android.googleapis.com',
             // You can set any number of default request options.
-            'timeout'  => 2.0,
+            'timeout'  => 2.0
         ]);
 
         $response = $client->request('POST', '/gcm/send', [
@@ -63,14 +62,10 @@ class SendNotifications extends Command
                 'Content-Type'     => 'application/json',
                 'Authorization' => 'key=AIzaSyCzvaekWSLHG7FAf-IV3QS3bBJMvdY6k1s'
             ], 
-            'body' => $this->prepareDids($user->subscribers)
+            'body' => $subscribers
         ]);
-
-        // print_r($response->getStatusCode());
-        dd($response->getBody()->getContents());
-
-        // Prepare did array
-        // Send curl to GCM
+        $this->info($response->getStatusCode());
+        $this->info($response->getBody()->getContents());
     }
 
     public function prepareDids($subscribers)
