@@ -28,7 +28,7 @@ self.addEventListener('push', function(evt) {
             //in Chrome 44+ and other SW browsers, reg ID is part of endpoint, send the whole thing and let the server figure it out.
             regID = subscription.endpoint;
         }
-        return fetch(_better.host + "/notification/566c79a717fa0bd070fe5e9a/latest").then(function(response) {
+        return fetch(_better.host + "/notification?did="+regID).then(function(response) {
             return response.json().then(function(json) {
                 if (_better.logging) console.log(json);
                 var promises = [];
