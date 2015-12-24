@@ -4,12 +4,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Larawings - Laravel 5.1 template</title>
+    <title>PushFlix - Holy grail of notifications</title>
 
-    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css"/>
-        
     @if ( Config::get('app.debug') )
-        <link rel="stylesheet" href="css/final.css" />
+        <link rel="stylesheet" href="/css/final.css" />
     @else 
         <link href="{{ elixir('css/final.css') }}" rel="stylesheet" type="text/css">
     @endif
@@ -22,25 +20,27 @@
 </head>
 <body>
 
-<div class="wrapper">
-    @yield('content')
-</div>
+  <div class="wrapper">
+    <header>
+      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        @include('partials.menu')
+      </nav>
+    </header>
 
-<footer class="footer navbar-fixed-bottom">
-    
-</footer>
+    <div class="container">
+      @yield('content')  
+    </div>
 
-<!-- Scripts -->
+    <footer class="footer navbar-fixed-bottom">
+        
+    </footer>
 
-<script src="//code.jquery.com/jquery-2.1.4.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-   $("#login-button").click(function(event){
-     event.preventDefault();
-   
-   $('form').fadeOut(500);
-   $('.wrapper').addClass('form-success');
-});
-</script>
-
+    <!-- Scripts -->
+    @if ( Config::get('app.debug') )
+      <script src="/js/app.js"></script>
+    @else 
+      <script src="{{ elixir("js/app.js") }}"></script>
+    @endif
+  </div>
 </body>
 </html>

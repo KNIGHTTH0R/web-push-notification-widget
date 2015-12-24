@@ -12,13 +12,9 @@
 */
 
 Route::get('/', function () {
-    if(Auth::check()) {
-        return Auth::user();
-    } else {
-        return view('welcome');
-    }
+  return view('home');  
 });
-
+Route::get('dashboard', 'DashboardController@index');
 
 
 // Authentication routes...

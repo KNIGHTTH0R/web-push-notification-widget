@@ -2,22 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Auth;
-use App\User;
-use App\Notification;
-use App\Subscriber;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class NotificationController extends Controller
+class DashboardController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
+    
     /**
      * Display a listing of the resource.
      *
@@ -25,8 +17,7 @@ class NotificationController extends Controller
      */
     public function index()
     {
-        $notifications = Notification::where('user_id', Auth::user()->id)->get();
-        return response()->json($notifications);
+        return view('dashboard.index');
     }
 
     /**
@@ -47,8 +38,7 @@ class NotificationController extends Controller
      */
     public function store(Request $request)
     {
-        $notification = User::find($request->input('user_id'))->notifications()->create($request->all());
-        return response()->json($notification);
+        //
     }
 
     /**
@@ -57,19 +47,9 @@ class NotificationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($did)
+    public function show($id)
     {
-        $notification = Subscriber::where("did", "=", $did)->first()->user->notifications->last();
-        return response()->json($notification);
-    }
-
-    /**
-     * @return \Illuminate\Http\Response
-     */
-    public function getLatestNotification($user_id)
-    {
-        $notification = Notification::where('user_id', $user_id)->orderBy('created_at', 'desc')->first();
-        return response()->json($notification);
+        //
     }
 
     /**

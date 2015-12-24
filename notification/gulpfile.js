@@ -12,9 +12,10 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.sass('app.scss');
-    mix.styles([
-        "app.css"
-    ], 'public/css/final.css', 'public/css');
-    mix.version('public/css/final.css');
+  var bootstrapPath = 'node_modules/bootstrap-sass/assets';
+  mix.sass('app.scss').copy(bootstrapPath + '/fonts', 'public/fonts');
+  mix.styles([
+    "app.css"
+  ], 'public/css/final.css', 'public/css').browserify('app.js');
+  mix.version('public/css/final.css');
 });

@@ -1,64 +1,32 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Laravel</title>
+@extends(".layouts.master")
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
+@section("content")
+  <div class="content">
+    
+    <div class="row">
+      <div class="col-lg-offset-3 col-lg-6">
+        <form method="POST" action="/auth/login">
+          {!! csrf_field() !!}
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email">
+          </div>
 
-        <style>
-            html, body {
-                height: 100%;
-            }
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" name="password" class="form-control" id="password" placeholder="Password">
+          </div>
+          
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="remember">
+            </label>
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
 
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                display: table;
-                font-weight: 100;
-                font-family: 'Lato';
-            }
+        </form>   
+      </div>
+    </div>
 
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="container">
-            <div class="content">
-                <form method="POST" action="/auth/login">
-                    {!! csrf_field() !!}
-                    <div>
-                        Email
-                        <input type="email" name="email" value="{{ old('email') }}">
-                    </div>
-
-                    <div>
-                        Password
-                        <input type="password" name="password" id="password">
-                    </div>
-
-                    <div>
-                        <input type="checkbox" name="remember"> Remember Me
-                    </div>
-
-                    <div>
-                        <button type="submit">Login</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </body>
-</html>
+  </div>
+@stop
