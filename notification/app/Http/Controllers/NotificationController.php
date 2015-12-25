@@ -54,7 +54,6 @@ class NotificationController extends Controller
         $exitCode = Artisan::call('send:notification', [
             'notification' => $notification->id,
         ]);
-        dd($exitCode);
         return redirect()->action('DashboardController@index');
 
         // return response()->json($notification);
