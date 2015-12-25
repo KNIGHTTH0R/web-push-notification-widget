@@ -7,8 +7,9 @@ use App\User;
 use App\Notification;
 use App\Subscriber;
 use Illuminate\Http\Request;
-
+use Artisan;
 use App\Http\Requests;
+use App\Http\Requests\StoreNotificationRequest;
 use App\Http\Controllers\Controller;
 
 class NotificationController extends Controller
@@ -45,10 +46,18 @@ class NotificationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreNotificationRequest $request)
     {
-        $notification = User::find($request->input('user_id'))->notifications()->create($request->all());
-        return response()->json($notification);
+        $userId = Auth::user()->id;
+        $notification = User::find($userId)->notifications()->create($request->all());
+
+        $exitCode = Artisan::call('send:notification', [
+            'notification' => $notification->id,
+        ]);
+        dd($exitCode);
+        return redirect()->action('DashboardController@index');
+
+        // return response()->json($notification);
     }
 
     /**
