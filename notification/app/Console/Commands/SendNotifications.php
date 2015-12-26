@@ -69,7 +69,7 @@ class SendNotifications extends Command
           $attributes = array(
               'user_id' => $user->id,
               'notification_id' => $this->argument('notification'),
-              'gcm_response' => $response->getBody()->getContents(),
+              'gcm_response' => json_decode($response->getBody()->getContents()),
               'registration_ids' => $subscribers['registration_ids']
           );
           SentNotification::create($attributes);
