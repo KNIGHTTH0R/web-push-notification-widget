@@ -61,7 +61,13 @@ class SendNotifications extends Command
             'headers' => [
                 'Content-Type'     => 'application/json',
                 'Authorization' => 'key=AIzaSyCzvaekWSLHG7FAf-IV3QS3bBJMvdY6k1s'
-            ], 
+            ],
+            'data' => json_encode ([
+                'title' => $notification->title, 
+                "body" => $notification->body, 
+                "icon" => $notification->icon_url, 
+                "tag" => "pushflix"
+              ]),
             'body' => json_encode($subscribers)
         ]);
         
@@ -74,9 +80,16 @@ class SendNotifications extends Command
           );
           SentNotification::create($attributes);
         }
-
+        
+        $this->info(json_encode ([
+                'title' => $notification->title, 
+                "body" => $notification->body, 
+                "icon" => $notification->icon_url, 
+                "tag" => "pushflix"
+              ]));
+        $this->info(json_encode($subscribers));
         $this->info($response->getStatusCode());
-        $this->info($response->getBody()->getContents());
+        $this->info($response->getBody());
     }
 
     public function prepareDids($subscribers)
