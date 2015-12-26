@@ -40,7 +40,7 @@ class SubscriberController extends Controller
     public function store(Request $request)
     {
         // dd($request->input('did'));
-        if ($subscriber = Subscriber::where('did', $request->input('did'))->first()) {
+        if ($subscriber = Subscriber::where('did', $request->did)->first()) {
             $subscriber->touch();
             $subscriber->save();
         } else {
