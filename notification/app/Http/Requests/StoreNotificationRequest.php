@@ -27,8 +27,8 @@ class StoreNotificationRequest extends Request
         return [
             'title' => 'required|max:36',
             'body' => 'required|max:80',
-            'icon_url' => 'required',
-            'redirect_url' => 'required'
+            'icon_url' => 'required|active_url',
+            'redirect_url' => 'required|active_url'
         ];
     }
 }
