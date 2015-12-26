@@ -10,7 +10,7 @@ class SentNotification extends Eloquent
         'user_id' => '',
         'notification_id' => '',
         'gcm_response' => '',
-        'registration_ids' => ''
+        'registration_ids' => '',
     );
 
     /**

@@ -16,6 +16,8 @@ class CreateSentNotificationsTable extends Migration
         {
             $collection->string('registration_ids');
             $collection->string('gcm_response');
+            $collection->integer('delivered');
+            $collection->integer('clicked');
             $collection->foreign('user_id')->references('_id')->on('user');
             $collection->foreign('notification_id')->references('_id')->on('notification');
             $collection->timestamps();

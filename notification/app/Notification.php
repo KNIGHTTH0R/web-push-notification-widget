@@ -20,6 +20,10 @@ class Notification extends Eloquent
      */
     protected $fillable = ['title','body', 'icon_url', 'redirect_url', 'image_url'];
 
+    /**
+     * @var array
+     */
+    protected $hidden = ['created_at', 'updated_at', 'user_id'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
