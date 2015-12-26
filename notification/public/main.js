@@ -290,8 +290,8 @@ function getLocation() {
         var geoSuccess = function(position) {
             startPos = position;
             var pos = { "success": true};
-            var pos.x = startPos.coords.latitude;
-            var pos.y = startPos.coords.longitude;
+            pos.x = startPos.coords.latitude;
+            pos.y = startPos.coords.longitude;
             return pos;
         };
         var geoError = function(position) {
