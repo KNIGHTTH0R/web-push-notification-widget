@@ -26,6 +26,6 @@ Route::get('auth/logout', 'Auth\AuthController@getLogout');
 Route::get('auth/register', 'Auth\AuthController@getRegister');
 Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-Route::resource('subscriber', 'HomeController');
+Route::resource('subscriber', 'SubscriberController');
 Route::resource('notification', 'NotificationController');
 Route::get('notification/{user_id}/latest', 'NotificationController@getLatestNotification');

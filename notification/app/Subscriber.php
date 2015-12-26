@@ -11,7 +11,7 @@ class Subscriber extends Eloquent
     /**
      * @var array
      */
-    protected $fillable = ['did'];
+    protected $fillable = ['did', 'device', 'platform'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

@@ -8,7 +8,7 @@ use App\Subscriber;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class HomeController extends Controller
+class SubscriberController extends Controller
 {
     /**
      * Display a listing of the resource.

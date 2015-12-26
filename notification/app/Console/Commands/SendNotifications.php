@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Notification;
+use App\SentNotification;
 use GuzzleHttp\Client;
 
 use Illuminate\Console\Command;
@@ -43,11 +44,10 @@ class SendNotifications extends Command
      */
     public function handle()
     {
-        $notification = $this->notification->find($this->argument('notification'));
+        $notification = $this->notification->findOrFail($this->argument('notification'));
         $user = $notification->user;
 
         $subscribers = $this->prepareDids($user->subscribers); 
-        $this->info($subscribers);
 
         // Set various headers on a request
         $client = new Client([
@@ -62,15 +62,25 @@ class SendNotifications extends Command
                 'Content-Type'     => 'application/json',
                 'Authorization' => 'key=AIzaSyCzvaekWSLHG7FAf-IV3QS3bBJMvdY6k1s'
             ], 
-            'body' => $subscribers
+            'body' => json_encode($subscribers)
         ]);
+        
+        if ($response->getStatusCode() == 200) {
+          $attributes = array(
+              'user_id' => $user->id,
+              'notification_id' => $this->argument('notification'),
+              'gcm_response' => $response->getBody()->getContents(),
+              'registration_ids' => $subscribers['registration_ids']
+          );
+          SentNotification::create($attributes);
+        }
+
         $this->info($response->getStatusCode());
         $this->info($response->getBody()->getContents());
     }
 
     public function prepareDids($subscribers)
     {
-      # code...
       $registration_ids = [];
       $didsArray = [];
       foreach ($subscribers as $key => $value) {
@@ -79,7 +89,8 @@ class SendNotifications extends Command
       if (count($didsArray) !== 0) {
         $registration_ids['registration_ids'] = $didsArray;
       }
-      return json_encode($registration_ids);
+
+      return $registration_ids;
     }
 
 

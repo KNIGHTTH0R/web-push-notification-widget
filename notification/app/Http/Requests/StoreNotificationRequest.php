@@ -25,8 +25,8 @@ class StoreNotificationRequest extends Request
     public function rules()
     {
         return [
-            'title' => 'required|max:255',
-            'body' => 'required|max:255',
+            'title' => 'required|max:36',
+            'body' => 'required|max:80',
             'icon_url' => 'required',
             'redirect_url' => 'required'
         ];

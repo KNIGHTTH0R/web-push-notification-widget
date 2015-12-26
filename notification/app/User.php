@@ -59,4 +59,12 @@ class User extends Eloquent implements AuthenticatableContract,
     {
         return $this->hasMany('App\Notification');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function sentNotifications()
+    {
+        return $this->hasMany('App\SentNotification');
+    }
 }

@@ -28,4 +28,12 @@ class Notification extends Eloquent
     {
         return $this->belongsTo('App\User');
     }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function sentNotifications()
+    {
+        return $this->hasMany('App\SentNotification');
+    }    
 }
