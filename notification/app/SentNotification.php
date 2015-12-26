@@ -11,12 +11,19 @@ class SentNotification extends Eloquent
         'notification_id' => '',
         'gcm_response' => '',
         'registration_ids' => '',
+        'delivered' => 0,
+        'clicked' => 0
     );
 
     /**
      * @var array
      */
     protected $fillable = ['user_id', 'notification_id', 'gcm_response', 'registration_ids'];
+
+    /**
+     * @var array
+     */
+    protected $visible = ['notification_id', 'delivered', 'clicked'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

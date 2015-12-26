@@ -28,4 +28,6 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 Route::resource('subscriber', 'SubscriberController');
 Route::resource('notification', 'NotificationController');
+
+Route::post('notification/analytics', 'NotificationController@updateSentNotification');
 Route::get('notification/{user_id}/latest', 'NotificationController@getLatestNotification');

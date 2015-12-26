@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\User;
 use App\Notification;
+use App\SentNotification;
 use App\Subscriber;
 use Illuminate\Http\Request;
 use Artisan;
@@ -102,6 +103,28 @@ class NotificationController extends Controller
     public function update(Request $request, $id)
     {
         //
+    }
+
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updateSentNotification(Request $request)
+    {
+        $sentNotification = SentNotification::where('notification_id', '=', $request->notification_id)->get()->last();
+        if($request->delivered) {
+            $sentNotification->increment('delivered');
+        } 
+
+        if ($request->clicked) {
+            $sentNotification->increment('clicked');  
+        }
+        
+        return $sentNotification;
     }
 
     /**

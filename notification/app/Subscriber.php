@@ -7,6 +7,11 @@ use Jenssegers\Mongodb\Model as Eloquent;
 
 class Subscriber extends Eloquent
 {
+    protected $attributes = array(
+        "did" => "",
+        "device" => "",
+        "platform" => ""
+    );
 
     /**
      * @var array
