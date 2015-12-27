@@ -1,6 +1,6 @@
 'use strict';
 
-var API_KEY = "AIzaSyCzvaekWSLHG7FAf-IV3QS3bBJMvdY6k1s";//window.GoogleSamples.Config.gcmAPIKey;
+var API_KEY = "AIzaSyCzvaekWSLHG7FAf-IV3QS3bBJMvdY6k1s";
 var GCM_ENDPOINT = 'https://android.googleapis.com/gcm/send';
 var PF_HOST = 'https://bebetter.in';
 var REGISTER_ENDPOINT = PF_HOST + '/subscriber';
