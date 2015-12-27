@@ -254,7 +254,7 @@ function getLocation() {
 }
 
 window.addEventListener('load', function () {
-    subscribe();
+    //subscribe();
 
     // Check that service workers are supported, if so, progressively
     // enhance and add push messaging support, otherwise continue without it.
