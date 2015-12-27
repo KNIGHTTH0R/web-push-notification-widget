@@ -7,7 +7,7 @@ var REGISTER_ENDPOINT = PF_HOST + '/subscriber';
 var NOTIFY_ENDPOINT = PF_HOST + 'notification/analytics';
 //var IP_ENDPOINT = PF_HOST + '/delivery/ip';
 
-var logging = false;
+var logging = true;
 var isPushEnabled = false;
 
 // This method handles the removal of subscriptionId
@@ -45,7 +45,7 @@ function sendSubscriptionToServer(subscription) {
         body: JSON.stringify({
             "did": endpointSections[endpointSections.length - 1],
             "user_id": "566c79a717fa0bd070fe5e9a",
-            "device": deviceInfo.browser,
+            "browser": deviceInfo.browser,
             "platform": deviceInfo.platform
         }),
         headers: {
