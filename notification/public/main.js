@@ -1,13 +1,13 @@
 'use strict';
 
-var API_KEY = "AIzaSyCzvaekWSLHG7FAf-IV3QS3bBJMvdY6k1s";//window.GoogleSamples.Config.gcmAPIKey;
+var API_KEY = "AIzaSyCzvaekWSLHG7FAf-IV3QS3bBJMvdY6k1s";
 var GCM_ENDPOINT = 'https://android.googleapis.com/gcm/send';
 var PF_HOST = 'https://bebetter.in';
 var REGISTER_ENDPOINT = PF_HOST + '/subscriber';
 var NOTIFY_ENDPOINT = PF_HOST + 'notification/analytics';
 //var IP_ENDPOINT = PF_HOST + '/delivery/ip';
 
-// var curlCommandDiv = document.querySelector('.js-curl-command');
+var logging = true;
 var isPushEnabled = false;
 
 // This method handles the removal of subscriptionId
@@ -32,13 +32,6 @@ function endpointWorkaround(pushSubscription) {
 }
 
 function sendSubscriptionToServer(subscription) {
-    // TODO: Send the subscription.endpoint
-    // to your server and save it to send a
-    // push message at a later date
-    //
-    // For compatibly of Chrome 43, get the endpoint via
-    // endpointWorkaround(subscription)
-    console.log('TODO: Implement sendSubscriptionToServer() ~~~DONE');
 
     var mergedEndpoint = endpointWorkaround(subscription);
     var endpointSections = mergedEndpoint.split('/');
@@ -52,7 +45,7 @@ function sendSubscriptionToServer(subscription) {
         body: JSON.stringify({
             "did": endpointSections[endpointSections.length - 1],
             "user_id": "566c79a717fa0bd070fe5e9a",
-            "device": deviceInfo.browser,
+            "browser": deviceInfo.browser,
             "platform": deviceInfo.platform
         }),
         headers: {
@@ -60,39 +53,13 @@ function sendSubscriptionToServer(subscription) {
         }
     });
     fetch(request).then(function (response) {
-        console.log(response);
+        if (logging) console.log(response);
         return response.json();
     }).then(function (json) {
-        console.log(json);
+        if (logging) console.log(json);
     }).catch(function (error) {
         console.log(error);
     });
-
-    // This is just for demo purposes / an easy to test by
-    // generating the appropriate cURL command
-    console.log(showCurlCommand(mergedEndpoint));
-}
-
-// NOTE: This code is only suitable for GCM endpoints,
-// When another browser has a working version, alter
-// this to send a PUSH request directly to the endpoint
-function showCurlCommand(mergedEndpoint) {
-    // The curl command to trigger a push message straight from GCM
-    if (mergedEndpoint.indexOf(GCM_ENDPOINT) !== 0) {
-        window.Demo.debug.log('This browser isn\'t currently ' +
-            'supported for this demo');
-        return;
-    }
-
-    var endpointSections = mergedEndpoint.split('/');
-    var subscriptionId = endpointSections[endpointSections.length - 1];
-
-    var curlCommand = 'curl --header "Authorization: key=' + API_KEY +
-        '" --header Content-Type:"application/json" ' + GCM_ENDPOINT +
-        ' -d "{\\"registration_ids\\":[\\"' + subscriptionId + '\\"]}"';
-
-    // curlCommandDiv.textContent = curlCommand;
-    return curlCommand;
 }
 
 function unsubscribe() {
@@ -140,9 +107,6 @@ function subscribe() {
                 // The subscription was successful
                 isPushEnabled = true;
 
-                // TODO: Send the subscription subscription.endpoint
-                // to your server and save it to send a push message
-                // at a later date
                 return sendSubscriptionToServer(subscription);
             })
             .catch(function (e) {
@@ -256,7 +220,7 @@ function getDeviceInfo() {
 
 function getLocation() {
     if (navigator.geolocation) {
-        console.log('Geolocation is supported!');
+        if (logging) console.log('Geolocation is supported!');
         var startPos;
         var geoOptions = {
             maximumAge: 5 * 60 * 1000,
@@ -284,13 +248,13 @@ function getLocation() {
         navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
     }
     else {
-        console.log('Geolocation is not supported for this Browser/OS version yet.');
+        if (logging) console.log('Geolocation is not supported for this Browser/OS version yet.');
         return false;
     }
 }
 
 window.addEventListener('load', function () {
-    subscribe();
+    //subscribe();
 
     // Check that service workers are supported, if so, progressively
     // enhance and add push messaging support, otherwise continue without it.
