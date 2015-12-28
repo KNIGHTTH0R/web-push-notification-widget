@@ -49,16 +49,18 @@ class NotificationController extends Controller
      */
     public function store(StoreNotificationRequest $request)
     {
-        $userId = Auth::user()->id;
-        $notification = User::find($userId)->notifications()->create($request->all());
+        $user = Auth::user();
+        $segment = $user->segments->first();
+        $notification = $user->notifications()->create($request->all());
+        
+        $notification->segment = $segment->toArray();
+        $notification->save();
 
         $exitCode = Artisan::call('send:notification', [
             'notification' => $notification->id,
         ]);
         
         return redirect()->action('DashboardController@index');
-
-        // return response()->json($notification);
     }
 
     /**

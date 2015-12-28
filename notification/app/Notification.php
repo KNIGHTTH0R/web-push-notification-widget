@@ -12,13 +12,14 @@ class Notification extends Eloquent
         'icon_url' => '',
         'redirect_url' => '',
         'image_url' => '',
-        'user_id' => ''
+        'user_id' => '',
+        'segment' =>''
     );
 
     /**
      * @var array
      */
-    protected $fillable = ['title','body', 'icon_url', 'redirect_url', 'image_url'];
+    protected $fillable = ['title','body', 'icon_url', 'redirect_url', 'image_url', 'segment'];
 
     /**
      * @var array
@@ -39,5 +40,10 @@ class Notification extends Eloquent
     public function sentNotifications()
     {
         return $this->hasMany('App\SentNotification');
-    }    
+    }
+
+    public function segment()
+    {
+        return $this->embedsOne('App\Segment');
+    }
 }

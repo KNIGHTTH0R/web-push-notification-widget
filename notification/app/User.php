@@ -60,6 +60,11 @@ class User extends Eloquent implements AuthenticatableContract,
         return $this->hasMany('App\Notification');
     }
 
+    public function segments()
+    {
+        return $this->embedsMany('App\Segment');
+    }
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */

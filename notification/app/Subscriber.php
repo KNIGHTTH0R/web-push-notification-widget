@@ -9,14 +9,14 @@ class Subscriber extends Eloquent
 {
     protected $attributes = array(
         "did" => "",
-        "device" => "",
+        "browser" => "",
         "platform" => ""
     );
 
     /**
      * @var array
      */
-    protected $fillable = ['did', 'device', 'platform'];
+    protected $fillable = ['did', 'browser', 'platform'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo

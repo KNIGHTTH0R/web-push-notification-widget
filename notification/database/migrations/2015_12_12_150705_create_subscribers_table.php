@@ -20,7 +20,7 @@ class CreateSubscribersTable extends Migration
             $collection->string('did');
             $collection->foreign('user_id')->references('_id')->on('users');
             $collection->unique('did');
-            $collection->unique('device');
+            $collection->unique('browser');
             $collection->unique('platform');
             $collection->timestamps();
         });
