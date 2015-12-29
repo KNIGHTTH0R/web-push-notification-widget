@@ -25,7 +25,7 @@ class SegmentController extends Controller
      */
     public function index()
     {   
-        return Auth::user()->segments;  
+        return Auth::user();  
     }
 
     /**
