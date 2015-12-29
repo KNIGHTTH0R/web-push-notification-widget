@@ -13,15 +13,18 @@ use App\Http\Controllers\Controller;
 
 class SegmentController extends Controller
 {
+    
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        if(!Auth::check())  abort(403, 'Unauthorized action.');
-        
+    {   
         return Auth::user()->segments;  
     }
 
@@ -32,7 +35,8 @@ class SegmentController extends Controller
      */
     public function create()
     {
-        //
+        $user = Auth::user();
+        return view('segment.segment_form', ['segmentBrowsers' => config('my_config.segment_browsers'), 'segmentRules' => config('my_config.segment_rules')]);
     }
 
     /**
@@ -43,7 +47,20 @@ class SegmentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $user = Auth::user();
+        // dd($request->all());
+        $params = [
+            'name' => $request->input('name'),
+            'description' => $request->input('description'),
+            'rules' => [
+              'browser' => $request->input('browser'),
+              'registration' => [
+                $request->input('registration') => $request->input('registration_date')
+              ]
+            ]
+        ];
+        $user->segments()->save(new Segment($params));
+        return $user;
     }
 
     /**

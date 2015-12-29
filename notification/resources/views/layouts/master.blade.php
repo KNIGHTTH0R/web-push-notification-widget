@@ -48,7 +48,9 @@
 
     <!-- Scripts -->
     @if ( Config::get('app.debug') )
+      <!-- Latest compiled and minified JavaScript -->
       <script src="/js/app.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.3/js/bootstrap-select.min.js"></script>
     @else 
       <script src="{{ elixir("js/app.js") }}"></script>
     @endif
