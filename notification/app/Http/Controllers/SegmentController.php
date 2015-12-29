@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use Auth;
 use App\User;
 use App\Segment;
 
@@ -19,13 +20,9 @@ class SegmentController extends Controller
      */
     public function index()
     {
-        $segment = new Segment(array('name' => 'A Game of Thrones'));
-
-        $user = User::first();
-
-        $segment = $user->segments()->save($segment);
-        // or
-        $segment = $user->segments()->create(array('name' => 'hoho hoho'));
+        if(!Auth::check())  abort(403, 'Unauthorized action.');
+        
+        return Auth::user()->segments;  
     }
 
     /**
