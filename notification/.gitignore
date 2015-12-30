@@ -4,7 +4,8 @@
 /public/js
 /public/fonts
 /public/build
-/storage
+/storage/framework/*
+/storage/views/*
 Homestead.yaml
 Homestead.json
 #.env
