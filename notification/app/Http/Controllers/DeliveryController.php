@@ -11,6 +11,7 @@ use App\Http\Controllers\Controller;
 class DeliveryController extends Controller
 {
     protected $clientJS = 'main.js';
+    
     /**
      * Display a listing of the resource.
      *
