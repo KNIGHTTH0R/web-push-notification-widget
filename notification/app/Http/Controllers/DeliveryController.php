@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 
 class DeliveryController extends Controller
 {
+    protected $clientJS = 'main.js';
     /**
      * Display a listing of the resource.
      *
@@ -20,8 +21,7 @@ class DeliveryController extends Controller
         $user = ['var1'=>123, "base_url" => "bebetter.in", "API_KEY" => "AIzaSyCzvaekWSLHG7FAf-IV3QS3bBJMvdY6k1s",
           "GCM_ENDPOINT" => "https://android.googleapis.com/gcm/send"
         ];
-        $filename = public_path().'/main.js';
-        $contents = File::get($filename);
+        $contents = File::get($this->clientJS);
         return response()->view('delivery.index', ['contents' => $contents, 'user' => json_encode($user, JSON_UNESCAPED_SLASHES)])->header('Content-Type', 'application /javascript');
     }
 
