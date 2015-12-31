@@ -12,6 +12,11 @@ use App\Http\Controllers\Controller;
 
 class SubscriberController extends Controller
 {
+    
+    public function __constructor()
+    {
+        //
+    }
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +24,7 @@ class SubscriberController extends Controller
      */
     public function index()
     {
-        $this->middleware('auth');
+        if (!Auth::check()) abort(403, 'Unauthorized access');
         $subscriber = Auth::user()->subscribers;
         return response()->json($subscriber);
     }
