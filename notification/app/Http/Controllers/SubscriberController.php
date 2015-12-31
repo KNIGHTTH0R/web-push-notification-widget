@@ -17,7 +17,7 @@ class SubscriberController extends Controller
      */
     public function index()
     {
-        $subscriber = User::first()->subscribers;
+        $subscriber = Auth::user()->subscribers;
         return response()->json($subscriber);
     }
 
