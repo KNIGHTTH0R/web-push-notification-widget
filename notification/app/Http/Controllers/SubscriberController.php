@@ -19,6 +19,7 @@ class SubscriberController extends Controller
      */
     public function index()
     {
+        $this->middleware('auth');
         $subscriber = Auth::user()->subscribers;
         return response()->json($subscriber);
     }
