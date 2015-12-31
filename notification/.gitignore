@@ -6,6 +6,7 @@
 /public/build
 /storage/framework/*
 /storage/views/*
+/storage/logs/*
 Homestead.yaml
 Homestead.json
 composer.json
