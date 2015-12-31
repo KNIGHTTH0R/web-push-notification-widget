@@ -9,7 +9,6 @@
 /storage/logs/*
 Homestead.yaml
 Homestead.json
-composer.json
 .env
 *.idea*
 deploy
