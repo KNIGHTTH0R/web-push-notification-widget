@@ -1,2 +1,7 @@
-'use strict';
-var pf = { 'user': '{{ $user->_id }}' };
+(function() {
+
+  var pf = {!! $user !!};
+  {!! $contents !!}  
+})();
+
+

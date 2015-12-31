@@ -15,18 +15,14 @@ class DeliveryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($user_id)
+    public function index()
     {
-        $user = User::find($user_id);
-//        dd($user);
-        return response()->view('delivery.index', compact('user'))->header('Content-Type', 'application /javascript');
-//        $filename = public_path().'/main.js';
-//        $bytesWritten = File::append(File::get($filename), $user);
-//        if ($bytesWritten === false)
-//        {
-//            die("Couldn't write to the file.");
-//        }
-//        die($bytesWritten);
+        $user = ['var1'=>123, "base_url" => "bebetter.in", "API_KEY" => "AIzaSyCzvaekWSLHG7FAf-IV3QS3bBJMvdY6k1s",
+          "GCM_ENDPOINT" => "https://android.googleapis.com/gcm/send"
+        ];
+        $filename = public_path().'/main.js';
+        $contents = File::get($filename);
+        return response()->view('delivery.index', ['contents' => $contents, 'user' => json_encode($user, JSON_UNESCAPED_SLASHES)])->header('Content-Type', 'application /javascript');
     }
 
     /**
