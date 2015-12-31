@@ -1,6 +1,8 @@
 window.$ = window.jQuery = require('jquery');
 require('bootstrap-sass');
 require('daterangepicker');
+require('bootstrap-select');
+
 $('input[name="registration_date"]').daterangepicker(
   { 
     format: 'YYYY-MM-DD',

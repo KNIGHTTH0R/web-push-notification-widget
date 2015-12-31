@@ -17,5 +17,6 @@ elixir(function(mix) {
   mix.styles([
     "app.css"
   ], 'public/css/final.css', 'public/css').browserify('app.js');
-  mix.version('public/css/final.css');
+  mix.version(['public/css/final.css', 'public/js/app.js']);
+  // mix.version('public/js/app.js');
 });

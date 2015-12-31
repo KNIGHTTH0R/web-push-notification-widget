@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PushFlix - The Holy Grail for Notifications</title>
 
-    @if ( Config::get('app.debug') )
+    @if ( !Config::get('app.debug') )
         <link rel="stylesheet" href="/css/final.css" />
     @else 
         <link href="{{ elixir('css/final.css') }}" rel="stylesheet" type="text/css">
@@ -47,10 +47,9 @@
     </footer>
 
     <!-- Scripts -->
-    @if ( Config::get('app.debug') )
+    @if ( !Config::get('app.debug') )
       <!-- Latest compiled and minified JavaScript -->
       <script src="/js/app.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.3/js/bootstrap-select.min.js"></script>
     @else 
       <script src="{{ elixir("js/app.js") }}"></script>
     @endif

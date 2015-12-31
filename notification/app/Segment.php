@@ -16,4 +16,9 @@ class Segment extends Eloquent
      * @var array
      */
     protected $fillable = ['name', 'description', 'rules'];
+
+    /**
+     * @var array
+     */
+    protected $hidden = ['created_at', 'updated_at'];
 }
