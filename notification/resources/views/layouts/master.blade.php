@@ -22,7 +22,7 @@
 
   <div class="wrapper">
     <header>
-      <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <nav class="navbar" role="navigation">
         @include('partials.menu')
       </nav>
     </header>
