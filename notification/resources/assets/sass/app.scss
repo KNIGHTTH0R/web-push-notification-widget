@@ -9,7 +9,7 @@ $font-family-sans-serif: 'Open Sans', sans-serif;
 
 html, body {
   background: #140324;
-  font-size: 13px;
+  font-size: 15px;
   height: 100%;
   margin: 0;
   padding: 0;
@@ -22,11 +22,11 @@ html, body {
 }
 
 .navbar-brand img {
-  width: 70%;
+  width: 90%;
 }
 
 .nav > li {
-  padding: 15px 10px 0px 25px;
+  padding: 15px 10px 0px 30px;
   a {
     color: #FFF !important;
     font-smooth: always;
