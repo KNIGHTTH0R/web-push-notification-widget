@@ -1,6 +1,6 @@
 (function() {
 
-  var pf = {!! $user !!};
+  var PF = {!! $user !!};
   {!! $contents !!}  
 })();
 

@@ -20,11 +20,11 @@ class DeliveryController extends Controller
     public function index($id)
     {
         $user = [
-            "ACCOUNT_ID" => $id,
-            "PF_HOST" => "https://bebetter.in/",
-            "API_KEY" => "AIzaSyCzvaekWSLHG7FAf-IV3QS3bBJMvdY6k1s",
-            "GCM_ENDPOINT" => "https://android.googleapis.com/gcm/send",
-            "REGISTER_ENDPOINT" => "subscriber",
+            "account_id" => $id,
+            "host" => "https://bebetter.in/",
+            "api_key" => "AIzaSyCzvaekWSLHG7FAf-IV3QS3bBJMvdY6k1s",
+            "gcm_endpoint" => "https://android.googleapis.com/gcm/send",
+            "register_endpoint" => "subscriber",
             "logging" => true
         ];
         $contents = File::get($this->clientJS);

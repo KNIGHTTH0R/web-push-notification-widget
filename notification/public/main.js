@@ -5,7 +5,7 @@
 // to the subscription endpoint
 function endpointWorkaround(pushSubscription) {
     // Make sure we only mess with GCM
-    if (pushSubscription.endpoint.indexOf(pf.GCM_ENDPOINT) !== 0) {
+    if (pushSubscription.endpoint.indexOf(PF.gcm_endpoint) !== 0) {
         return pushSubscription.endpoint;
     }
 
@@ -28,13 +28,13 @@ function sendSubscriptionToServer(subscription) {
     // TODO: Move Browser detection to Server
     var deviceInfo = getDeviceInfo();
 
-    var request = new Request(pf.REGISTER_ENDPOINT, {
+    var request = new Request(PF.register_endpoint, {
         method: 'POST',
         mode: 'cors',
         redirect: 'follow',
         body: JSON.stringify({
             "did": endpointSections[endpointSections.length - 1],
-            "user_id": "566c79a717fa0bd070fe5e9a",
+            "user_id": PF.account_id,
             "browser": deviceInfo.browser,
             "platform": deviceInfo.platform
         }),
@@ -43,10 +43,10 @@ function sendSubscriptionToServer(subscription) {
         }
     });
     fetch(request).then(function (response) {
-        if (pf.logging) console.log(response);
+        if (PF.logging) console.log(response);
         return response.json();
     }).then(function (json) {
-        if (pf.logging) console.log(json);
+        if (PF.logging) console.log(json);
     }).catch(function (error) {
         console.log(error);
     });
@@ -143,7 +143,7 @@ function getDeviceInfo() {
 
 function getLocation() {
     if (navigator.geolocation) {
-        if (pf.logging) console.log('Geolocation is supported!');
+        if (PF.logging) console.log('Geolocation is supported!');
         var startPos;
         var geoOptions = {
             maximumAge: 5 * 60 * 1000,
@@ -159,7 +159,7 @@ function getLocation() {
             return pos;
         };
         var geoError = function(position) {
-            if(pf.logging) console.log('Error occurred. Error code: ' + error.code);
+            if(PF.logging) console.log('Error occurred. Error code: ' + error.code);
             return {"success": false, "reason": error.code};
             // error.code can be:
             //   0: unknown error
@@ -171,7 +171,7 @@ function getLocation() {
         navigator.geolocation.getCurrentPosition(geoSuccess, geoError, geoOptions);
     }
     else {
-        if (pf.logging) console.log('Geolocation is not supported for this Browser/OS version yet.');
+        if (PF.logging) console.log('Geolocation is not supported for this Browser/OS version yet.');
         return false;
     }
 }
