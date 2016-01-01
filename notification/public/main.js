@@ -28,7 +28,7 @@ function sendSubscriptionToServer(subscription) {
     // TODO: Move Browser detection to Server
     var deviceInfo = getDeviceInfo();
 
-    var request = new Request(PF.register_endpoint, {
+    var request = new Request(PF.host + PF.register_endpoint, {
         method: 'POST',
         mode: 'cors',
         redirect: 'follow',
