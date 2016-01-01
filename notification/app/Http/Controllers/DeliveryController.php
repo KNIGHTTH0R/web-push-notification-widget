@@ -17,10 +17,15 @@ class DeliveryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        $user = ['var1'=>123, "base_url" => "bebetter.in", "API_KEY" => "AIzaSyCzvaekWSLHG7FAf-IV3QS3bBJMvdY6k1s",
-          "GCM_ENDPOINT" => "https://android.googleapis.com/gcm/send"
+        $user = [
+            "ACCOUNT_ID" => $id,
+            "PF_HOST" => "https://bebetter.in/",
+            "API_KEY" => "AIzaSyCzvaekWSLHG7FAf-IV3QS3bBJMvdY6k1s",
+            "GCM_ENDPOINT" => "https://android.googleapis.com/gcm/send",
+            "REGISTER_ENDPOINT" => "subscriber",
+            "logging" => true
         ];
         $contents = File::get($this->clientJS);
         return response()->view('delivery.index', ['contents' => $contents, 'user' => json_encode($user, JSON_UNESCAPED_SLASHES)])->header('Content-Type', 'application /javascript');

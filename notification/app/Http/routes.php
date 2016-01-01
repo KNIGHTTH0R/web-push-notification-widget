@@ -34,4 +34,4 @@ Route::resource('segment', 'SegmentController');
 Route::post('notification/analytics', 'NotificationController@updateSentNotification');
 Route::get('notification/{user_id}/latest', 'NotificationController@getLatestNotification');
 
-Route::get('delivery.js', 'DeliveryController@index');
+Route::get('js/{id}/main.js', 'DeliveryController@index');
