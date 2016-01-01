@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>PushFlix</title>
 
-    @if ( !Config::get('app.debug') )
+    @if ( Config::get('app.debug') == true )
         <link rel="stylesheet" href="/css/final.css" />
     @else 
         <link href="{{ elixir('css/final.css') }}" rel="stylesheet" type="text/css">
@@ -47,7 +47,7 @@
     </footer>
 
     <!-- Scripts -->
-    @if ( !Config::get('app.debug') )
+    @if ( Config::get('app.debug') == true )
       <!-- Latest compiled and minified JavaScript -->
       <script src="/js/app.js"></script>
     @else 
