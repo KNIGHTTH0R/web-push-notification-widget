@@ -27,7 +27,7 @@
       </nav>
     </header>
 
-    <div class="container">
+    <div class="container-fluid">
 
       @if (count($errors) > 0)
         <div class="alert alert-danger">
