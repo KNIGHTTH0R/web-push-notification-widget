@@ -2,8 +2,9 @@
 $font-family-sans-serif: 'Open Sans', sans-serif;
 
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-@import "node_modules/daterangepicker/daterangepicker-bs3.min";
+/*@import "node_modules/daterangepicker/daterangepicker-bs3.min";
 @import "node_modules/bootstrap-select/sass/bootstrap-select";
+*/
 @import url(https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.3/css/bootstrap-select.min.css);
 
 html, body {
