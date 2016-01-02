@@ -18,6 +18,19 @@ html, body {
 .navbar {
   margin-top: 20px;
   background: transparent;
+  a.btn-xl-transparent {
+    color: #F47100;
+    border-color: #F47100;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 3px;
+    /*font-size: 18px;*/
+    padding: 13px 40px;
+    &:hover{
+      background-color: #F47100;
+      color: #FFF;
+    };
+  }
 }
 
 .main-bg {
@@ -56,6 +69,21 @@ html, body {
     /*font-size: 18px;*/
     padding: 13px 40px;
     margin: 50px 30px;
+  }
+
+  a.btn-xl-transparent {
+    color: #F47100;
+    border-color: #F47100;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 3px;
+    /*font-size: 18px;*/
+    padding: 13px 40px;
+    margin: 50px 30px;
+    &:hover{
+      background-color: #F47100;
+      color: #FFF;
+    };
   }
 }
 

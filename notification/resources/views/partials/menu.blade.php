@@ -28,8 +28,8 @@
             <li>
                 <a href="#" title="">LOGIN</a>
             </li>
-            <li>
-                <a href="#" title="">SIGNUP FOR FREE</a>
+            <li style="padding-top:2px;">
+                <a href="#" title="" class="btn btn-xl-transparent">SIGNUP FOR FREE</a>
             </li>
         </ul>
     </div>
