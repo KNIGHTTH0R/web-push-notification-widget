@@ -33,6 +33,7 @@ html, body {
   padding: 120px 0;
   text-align: center;
   word-spacing: 2px;
+
   h1 {
     font-size: 70px;
     font-weight: 100;
@@ -43,6 +44,18 @@ html, body {
     margin-top: 35px;
     word-spacing: 2px;
     font-weight: 100;
+  }
+
+  a.btn-xl {
+    color: #FFF;
+    background-color: #F47100;
+    border-color: #F47100;
+    text-transform: uppercase;
+    font-weight: 500;
+    border-radius: 3px;
+    /*font-size: 18px;*/
+    padding: 13px 40px;
+    margin: 50px 30px;
   }
 }
 

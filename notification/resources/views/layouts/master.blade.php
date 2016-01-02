@@ -34,6 +34,8 @@
             <div class="site-heading">
               <h1>RE-ENGAGE WITH PUSHFLIX</h1>
               <h2><i>Pushflix lets you send targeted notifications to your users</i></h2>
+              <a href="" class="btn btn-xl">WATCH OVERVIEW</a>
+              <a href="" class="btn btn-xl">HAVE A DEMO</a>
             </div>
           </div>
         </div>
