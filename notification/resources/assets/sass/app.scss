@@ -17,27 +17,49 @@ html, body {
 
 .navbar {
   margin-top: 20px;
+  background: transparent;
+}
+
+.main-bg {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: url("https://files.slack.com/files-pri/T0HG04KDL-F0HJN1WR0/background_home_page.jpg") no-repeat center center;
+  background-size: cover;
+  background-attachment: scroll;
+
+}
+.site-heading {
+  color: #FFF;
+  padding: 120px 0;
+  text-align: center;
+  letter-spacing: 1px;
+  h1 {
+    font-weight: 100;
+    font-size: 60px;
+  }
 }
 
 .container-fluid {
   max-width: 90%;
 }
+
 .navbar-brand {
   padding: 8px 15px 15px 15px;
-}
-.navbar-brand img {
-  width: 90%;
+  img {
+    width: 90%;
+  }
 }
 
 .nav > li {
   padding: 15px 10px 0px 30px;
   a {
-    color: #FFF !important;
+    color: #FFF;
     font-smooth: always;
     padding: 0 5px 5px 5px;
     &:hover, &:focus {
       background-color: transparent;
       border-bottom: 2px solid #F47100;
+      color: #F47100;
       padding-bottom: 15x;
     };
   }

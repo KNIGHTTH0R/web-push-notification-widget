@@ -22,26 +22,23 @@
 
   <div class="wrapper">
     <header>
-      <nav class="navbar" role="navigation">
+      <nav class="navbar navbar-fixed-top topnav" role="navigation">
         @include('partials.menu')
       </nav>
     </header>
 
-    <div class="container-fluid">
-
-      @if (count($errors) > 0)
-        <div class="alert alert-danger">
-          <ul>
-              @foreach ($errors->all() as $error)
-                  <li>{{ $error }}</li>
-              @endforeach
-          </ul>
+    <div class="main-bg">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <div class="site-heading">
+              <h1>RE-ENGAGE WITH PUSHFLIX</h1>
+              <h2><i>Pushflix lets you send targeted notifications</i></h2>
+            </div>
+          </div>
         </div>
-      @endif
-      
-      @yield('content')  
+      </div>
     </div>
-
     <footer class="footer navbar-fixed-bottom">
         
     </footer>
