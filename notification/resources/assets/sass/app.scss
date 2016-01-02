@@ -32,10 +32,17 @@ html, body {
   color: #FFF;
   padding: 120px 0;
   text-align: center;
-  letter-spacing: 1px;
+  word-spacing: 2px;
   h1 {
+    font-size: 70px;
     font-weight: 100;
-    font-size: 60px;
+    word-spacing: 10px;
+  }
+
+  h2 {
+    margin-top: 35px;
+    word-spacing: 2px;
+    font-weight: 100;
   }
 }
 

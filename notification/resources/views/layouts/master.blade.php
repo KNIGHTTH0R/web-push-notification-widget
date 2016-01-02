@@ -30,10 +30,10 @@
     <div class="main-bg">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+          <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
             <div class="site-heading">
               <h1>RE-ENGAGE WITH PUSHFLIX</h1>
-              <h2><i>Pushflix lets you send targeted notifications</i></h2>
+              <h2><i>Pushflix lets you send targeted notifications to your users</i></h2>
             </div>
           </div>
         </div>
