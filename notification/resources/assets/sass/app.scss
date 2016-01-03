@@ -8,7 +8,7 @@ $font-family-sans-serif: 'Open Sans', sans-serif;
 @import url(https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.9.3/css/bootstrap-select.min.css);
 
 html, body {
-  background: #140324;
+  /*background: #140324;*/
   font-size: 15px;
   height: 100%;
   margin: 0;
@@ -25,7 +25,7 @@ html, body {
     font-weight: 500;
     border-radius: 3px;
     /*font-size: 18px;*/
-    padding: 13px 40px;
+    padding: 13px 40px;gu
     &:hover{
       background-color: #F47100;
       color: #FFF;
@@ -39,16 +39,17 @@ html, body {
   background: url("https://files.slack.com/files-pri/T0HG04KDL-F0HJN1WR0/background_home_page.jpg") no-repeat center center;
   background-size: cover;
   background-attachment: scroll;
-
+  height: 55em;
 }
 .site-heading {
   color: #FFF;
-  padding: 120px 0;
+  padding: 5em 0;
   text-align: center;
   word-spacing: 2px;
+  margin-bottom: -4em;
 
   h1 {
-    font-size: 70px;
+    font-size: 3.5em;
     font-weight: 100;
     word-spacing: 10px;
   }
@@ -89,6 +90,13 @@ html, body {
 
 .container-fluid {
   max-width: 90%;
+}
+
+.image-placeholder {
+  img {
+    width: 100%;
+    height: 100%;
+  }
 }
 
 .navbar-brand {

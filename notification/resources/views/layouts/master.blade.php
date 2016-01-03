@@ -32,11 +32,17 @@
         <div class="row">
           <div class="col-lg-10 col-lg-offset-1 col-md-10 col-md-offset-1">
             <div class="site-heading">
-              <h1>RE-ENGAGE WITH PUSHFLIX</h1>
+              <h1>Re-engage your users with Pushflix</h1>
               <h2><i>Pushflix lets you send targeted notifications to your users</i></h2>
               <a href="" class="btn btn-xl">WATCH OVERVIEW</a>
               <a href="" class="btn btn-xl-transparent">HAVE A DEMO</a>
             </div>
+          </div>
+        </div>
+
+        <div class="row image-placeholder">
+          <div class="col-lg-12">
+            <img src="https://files.slack.com/files-pri/T0HG04KDL-F0HJZC925/macbook_and_phone.png">
           </div>
         </div>
       </div>
