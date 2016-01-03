@@ -48,11 +48,11 @@ class SubscriberController extends Controller
     public function store(Request $request)
     {
         // dd($request->input('did'));
-        if ($subscriber = Subscriber::where('did', $request->did)->first()) {
+        if ($subscriber = Subscriber::where('did' => $request->did)->where('user_id' => $request->user_id)->first()) {
             $subscriber->touch();
             $subscriber->save();
         } else {
-            $subscriber = User::find($request->input('user_id'))->subscribers()->create($request->all());
+            $subscriber = User::find($request->user_id)->subscribers()->create($request->all());
         }
         return response()->json($subscriber);
     }
