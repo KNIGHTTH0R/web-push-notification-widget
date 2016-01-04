@@ -39,7 +39,7 @@
                       <a href="" class="btn btn-xl btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">WATCH OVERVIEW</span></a>
                   </li>
                   <li>
-                      <a href="p" class="btn btn-xl-transparent btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">HAVE A DEMO</span></a>
+                      <a href="" class="btn btn-xl-transparent btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">HAVE A DEMO</span></a>
                   </li>
               </ul>
               <!-- <a href="" class="btn btn-xl">WATCH OVERVIEW</a>
