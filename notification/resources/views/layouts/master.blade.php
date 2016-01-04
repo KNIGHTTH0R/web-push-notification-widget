@@ -34,15 +34,23 @@
             <div class="site-heading">
               <h1>Re-engage your users with Pushflix</h1>
               <h2><i>Pushflix lets you send targeted notifications to your users</i></h2>
-              <a href="" class="btn btn-xl">WATCH OVERVIEW</a>
-              <a href="" class="btn btn-xl-transparent">HAVE A DEMO</a>
+              <ul class="list-inline intro-social-buttons">
+                  <li>
+                      <a href="" class="btn btn-xl btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">WATCH OVERVIEW</span></a>
+                  </li>
+                  <li>
+                      <a href="p" class="btn btn-xl-transparent btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">HAVE A DEMO</span></a>
+                  </li>
+              </ul>
+              <!-- <a href="" class="btn btn-xl">WATCH OVERVIEW</a>
+              <a href="" class="btn btn-xl-transparent">HAVE A DEMO</a> -->
             </div>
           </div>
         </div>
 
         <div class="row image-placeholder">
           <div class="col-lg-12">
-            <img src="https://files.slack.com/files-pri/T0HG04KDL-F0HJZC925/macbook_and_phone.png">
+            <img src="../images/macbook_and_phone.png">
           </div>
         </div>
       </div>
