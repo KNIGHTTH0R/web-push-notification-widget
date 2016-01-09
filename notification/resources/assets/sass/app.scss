@@ -34,13 +34,13 @@ html, body {
 }
 
 .main-bg {
-  padding-top: 50px;  
-  padding-bottom: 50px;
+  padding-top: 50px;
   text-align: center;
   color: #f8f8f8;
   background: url(../images/home_page_background.jpg) no-repeat top center;
   background-size: cover;
-  min-height: 860px;
+  background-attachment: fixed;
+  height: 100%;
   /*padding-top: 20px;
   padding-bottom: 20px;
   background: url("../images/home_page_background.jpg") no-repeat top center;
@@ -96,6 +96,7 @@ ul.list-inline > li {
   padding-left: 25px;
   padding-right: 25px;
 }
+
 @media (max-width: 767px) {
   ul.intro-social-buttons > li, ul.list-inline > li {
     display: block;
@@ -112,10 +113,6 @@ ul.list-inline > li {
 .image-placeholder {
   img {
     width: 100%;
-/* height: 100%; */
-    position: absolute;
-    top: 0;
-    left: 0;
   }
 }
 
@@ -140,4 +137,10 @@ ul.list-inline > li {
     };
   }
 }
-  
+
+.content {
+  padding-top: 50px;
+  img {
+    padding-top: 30px;
+  }
+}

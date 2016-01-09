@@ -55,6 +55,56 @@
         </div>
       </div>
     </div>
+
+    <div class="content send-notification" style="text-align: center;">
+      <div class="container-fluid">
+        <h1>Easy to Send Notification</h1>
+        <div class="row">
+          <div class="col col-lg-4">
+            <h2>Get your code</h2>
+            <img src="../images/get-code.png">
+          </div>
+          <div class="col col-lg-4">
+            <h2>Create Notification</h2>
+            <img src="../images/create-notification.png">
+            <img src="../images/create-notification.png">
+            <img src="../images/create-notification.png">
+          </div>
+          <div class="col col-lg-4">
+            <h2>Preview & Send</h2>
+            <img src="../images/notification.png">
+            <img src="../images/notification.png">
+            <img src="../images/notification.png">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="content schedule-notification" style="text-align: center;">
+      <div class="container-fluid">
+        <h1>Schedule your Notification in Advance</h1>
+        <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</h3>
+        <div class="row">
+          <div class="col col-lg-5">
+            <img src="../images/notification.png">
+          </div>
+          <div class="col col-lg-5">
+            <img src="../images/notification.png">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col col-lg-5">
+            <img src="../images/notification.png">
+          </div>
+          <div class="col col-lg-5">
+            <img src="../images/notification.png">
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
     <footer class="footer navbar-fixed-bottom">
         
     </footer>
