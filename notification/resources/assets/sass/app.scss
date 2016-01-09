@@ -16,7 +16,8 @@ html, body {
 }
 
 .navbar {
-  margin-top: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   background: transparent;
   a.btn-xl-transparent {
     color: #F47100;
@@ -31,6 +32,9 @@ html, body {
       color: #FFF;
     };
   }
+}
+.navbar-custom {
+  transition: background .5s ease-in-out,padding .5s ease-in-out;
 }
 
 .main-bg {
@@ -114,6 +118,12 @@ ul.list-inline > li {
   img {
     width: 100%;
   }
+}
+
+.top-nav-collapse {
+  padding: 10px;
+  border-bottom: 1px solid rgba(255,255,255,.3);
+  background: #140324; 
 }
 
 .navbar-brand {

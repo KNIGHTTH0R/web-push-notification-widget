@@ -22,7 +22,7 @@
 
   <div class="wrapper">
     <header>
-      <nav class="navbar navbar-fixed-top topnav" role="navigation">
+      <nav class="navbar navbar-custom navbar-fixed-top topnav" role="navigation">
         @include('partials.menu')
       </nav>
     </header>
@@ -101,7 +101,7 @@
             <img src="../images/notification.png">
           </div>
         </div>
-        
+
       </div>
     </div>
 
