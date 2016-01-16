@@ -1,0 +1,92 @@
+.wrapper {
+  a {
+    color: #fff;
+  }
+  .form-control:focus {
+    border-color: #F47100;
+    outline: 0;
+    //box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px #F47100;
+    box-shadow: none;
+  }
+  height: 100%;
+  .signup {
+    text-align: center;
+    color: #261630;
+    background: url(/images/home_page_background.jpg) no-repeat top center;
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100%;
+
+    h1 {
+      font-size: 14px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+    .login-container {
+      background: white;
+      border-radius: 3px;
+      margin-top: 110px;
+    }
+    .login-header {
+      padding-top: 50px;
+      padding-bottom: 30px;
+      display: block;
+    }
+    .p-flix {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto;
+      display: block;
+      background: url(/images/pf-icon.png) no-repeat top center;
+    }
+    .login-body {
+      margin: 0 40px;
+    }
+    .btn-xl {
+      color: #FFF;
+      background-color: #F47100;
+      border-color: #F47100;
+      text-transform: uppercase;
+      font-weight: 500;
+      border-radius: 3px;
+      font-size: 16px;
+      width: 100%;
+    }
+    .after-body {
+      margin: 5px auto;
+    }
+    .terms {
+      font-size: 9px;
+      padding-bottom: 50px;
+      a {
+        color: #1233e2;
+      }
+    }
+    .after-container {
+      font-size: 9px;
+      margin-top: 20px;
+      color: #fff;
+      .side {
+        width: 50%;
+        margin: 0;
+        display: inline-block;
+      }
+      .side-l {
+        float: left;
+        text-align: left;
+      }
+      .side-r {
+        float: right;
+        text-align: right;
+        a {
+          color: #F47100;
+        }
+      }
+      .side-c {
+        a {
+          color: #F47100;
+        }
+      }
+    }
+  }
+}
