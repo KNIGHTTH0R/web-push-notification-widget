@@ -9,7 +9,8 @@
         "laravel/framework": "5.1.*",
         "jenssegers/mongodb": "^2.2",
         "guzzlehttp/guzzle": "^6.1",
-        "predis/predis": "~1.0"
+        "predis/predis": "~1.0",
+        "vladimir-yuldashev/laravel-queue-rabbitmq": "5.1"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
